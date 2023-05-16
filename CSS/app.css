@@ -1,0 +1,66 @@
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 35px;
+    color: seagreen;
+
+}
+
+#word_to_find {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    color: blueviolet;
+
+}
+
+hr {
+    border-color: blue ;
+}
+
+#word_to_find > p {
+    letter-spacing: 1rem;
+    font-weight: bold;
+    color :blueviolet;
+}
+
+#letters {
+
+}
+
+.good {}
+
+.wrong {}
+
+.disabled {
+
+}
+
+.gameover {
+    letter-spacing: 0rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.winner {
+    color:green;
+}
+
+.winner::after {
+    content : '\01F603';
+}
+
+.loser {
+    color: tomato;
+}
+
+.loser::after {
+    content: '\01F625';
+}
