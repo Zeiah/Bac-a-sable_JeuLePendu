@@ -1,23 +1,28 @@
 header {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
 h1 {
     font-size: 35px;
     color: seagreen;
-
 }
 
 #word_to_find {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     font-size: 25px;
     color: blueviolet;
+    border: 2px solid blue;
+    border-radius: 15px;
 
 }
 
@@ -26,13 +31,39 @@ hr {
 }
 
 #word_to_find > p {
-    letter-spacing: 1rem;
+    letter-spacing: 2px;
+    font-size: 30px;
     font-weight: bold;
-    color :blueviolet;
+    color :orange;
 }
 
 #letters {
+    width: 75%;
+}
 
+#letters > ul {
+    display: flex;
+    justify-content: center;
+    gap : 10px;
+    flex-wrap: wrap;
+    padding: 10px;
+    cursor: pointer;
+    caret-color:royalblue;
+}
+
+#letters > ul > li {
+    width : 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    border : 2px solid pink;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 25px;
+    font-weight: bold;
+    color : teal;
+    background-color: aqua;
 }
 
 .good {}

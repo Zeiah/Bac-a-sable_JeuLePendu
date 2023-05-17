@@ -20,7 +20,7 @@ init() {
     
     word_section_element.innerHTML = `
     <figure>
-        <img src="./images/gallows.gif" alt="support de pendaison"><hr>
+        <img src="./images/gallows.gif" alt="support du jeu"><hr>
         <figcaption> 
             Nombre de lettres à trouver : ${this.random_word.length}<hr> 
             Lettres trouvées :  ${this.letters_found}<hr>

@@ -1,12 +1,12 @@
 const words_to_find = [
-    'afin de',
+    'afin\ de',
     'ainsi',
     'alors',
     'après',
     'assez',
-    'à travers',
-    'au-dessus',
-    'au-dessous',
+    'à\ travers',
+    'au\-dessus',
+    'au\-dessous',
     'aujourd\'hui',
     'auprès'
 ]
