@@ -17,10 +17,16 @@ init() {
     
     const word_section_element = document.createElement('section');
     word_section_element.id = "word_to_find";
+
+    if (this.random_word.includes('\ ')) {this.letters_found -1}
+    if (this.random_word.includes('\'')) {this.letters_found -1}
+    else if (this.random_word.includes('é' || 'è' || 'ê')) {replace(/[éèê]/g, 'e')}   
+    else if (this.random_word.includes('ù')) {replace(/[ù]/g, 'u')}
+    else if (this.random_word.includes('à')) {replace(/[à]/g, 'a')}
     
     word_section_element.innerHTML = `
     <figure>
-        <img src="./images/gallows.gif" alt="support du jeu"><hr>
+        <img src="./images/Pendu_Nina_7chances.png" alt="support du jeu, 7 chances"><hr>
         <figcaption> 
             Nombre de lettres à trouver : ${this.random_word.length}<hr> 
             Lettres trouvées :  ${this.letters_found}<hr>
@@ -69,6 +75,7 @@ generateLettersButtons(letters_section_element) {
 
 displayHiddenWord() {
 
+
     const hidden_word = this.random_word.slice().replace(/[a-z]/g, '_');
 
     const paragraph_element = document.createElement('p')
@@ -102,7 +109,7 @@ checkIfLetterIsInTheWord(event) {
     } else {
         this.errors++;
         event.target.classList.add('wrong');
-        document.body.querySelector('img').src = `./images/error${this.errors}.gif`;
+        document.body.querySelector('img').src = `./images/error${this.errors}.png`;
     }
 
     document.body.querySelector('figcaption').innerHTML = `Nombre de lettres à trouver : ${this.random_word.lenght}<hr>Lettres trouvées : ${this.letters_found}<hr>Erreurs : ${this.errors} / 7`
