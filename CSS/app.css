@@ -90,14 +90,14 @@ hr {
     color:green;
 }
 
-.winner::after {
+/*.winner::after {
     content : '\01F603';
-}
+}*/
 
 .loser {
     color: tomato;
 }
 
-.loser::after {
+/*.loser::after {
     content: '\01F625';
-}
+}/*

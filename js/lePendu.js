@@ -3,7 +3,7 @@ class lePendu {
         this.parent_element = parent_element;
         this.list_of_words = list_of_words;
         this.errors = 0;
-        this.attemps = 0;
+        this.attempts = 0;
         this.letters_found = 0;
         this.random_word;
         this.hidden_letters_array;
@@ -18,19 +18,21 @@ init() {
     const word_section_element = document.createElement('section');
     word_section_element.id = "word_to_find";
 
-    if (this.random_word.includes('\ ')) {this.letters_found -1}
-    if (this.random_word.includes('\'')) {this.letters_found -1}
-    else if (this.random_word.includes('é' || 'è' || 'ê')) {replace(/[éèê]/g, 'e')}   
-    else if (this.random_word.includes('ù')) {replace(/[ù]/g, 'u')}
-    else if (this.random_word.includes('à')) {replace(/[à]/g, 'a')}
-    
+    /* if (this.random_word.includes('\ ')) {this.letters_found -=1}
+    if (this.random_word.includes('\'')) {this.letters_found -=1}
+    if (this.random_word.includes('\-')) {this.letters_found -=1}
+    else if (this.random_word.includes('é' || 'è' || 'ê')) {this.random_word.replace(/[éèê]/g, 'e')}   
+    else if (this.random_word.includes('ù')) {this.random_word.replace(/[ù]/g, 'u')}
+    else if (this.random_word.includes('à')) {this.random_word.replace(/[à]/g, 'a')}*/
+
     word_section_element.innerHTML = `
     <figure>
         <img src="./images/Pendu_Nina_7chances.png" alt="support du jeu, 7 chances"><hr>
         <figcaption> 
             Nombre de lettres à trouver : ${this.random_word.length}<hr> 
-            Lettres trouvées :  ${this.letters_found}<hr>
-            Tentatives : ${this.errors} / 7
+            Lettres trouvées :  ${this.letters_found} / ${this.random_word.length}<hr>
+            Tentatives : ${this.attempts} / 7 <hr>
+            Erreurs : ${this.errors}
         </figcaption>
     </figure>
     `;
@@ -64,7 +66,7 @@ generateLettersButtons(letters_section_element) {
         const li_element = document.createElement('li');
         li_element.textContent = letter;
 
-        li_element.addEventListener('click', () => this.checkIfLetterIsInTheWord(event), {once:true});
+        li_element.addEventListener('click', (event) => this.checkIfLetterIsInTheWord(event), {once:true});
 
         ul_element.appendChild(li_element);
 
@@ -90,7 +92,7 @@ displayHiddenWord() {
 checkIfLetterIsInTheWord(event) {
 
     // à chaque lettre cliquée, incrémenter compteur de tentatives
-    this.attempts++;
+    this.attempts ++;
 
     const selected_letter = event.target.textContent;
 
@@ -99,20 +101,21 @@ checkIfLetterIsInTheWord(event) {
 
         this.random_word.split('').forEach((letter, index) => {
             if (letter === selected_letter) {
-                this.letters_found++;
+                this.random_word.length - this.letters_found
+                this.letters_found ++;
                 this.hidden_letters_array[index]= selected_letter;
             }
         });
 
         document.body.querySelector('section[id="word_to_find"] > p').textContent = this.hidden_letters_array.join('');
 
-    } else {
-        this.errors++;
+    }else {
+        this.errors ++;
         event.target.classList.add('wrong');
-        document.body.querySelector('img').src = `./images/error${this.errors}.png`;
+        document.body.querySelector('figure > img').src = `./images/Error${this.errors}.png`;
     }
 
-    document.body.querySelector('figcaption').innerHTML = `Nombre de lettres à trouver : ${this.random_word.lenght}<hr>Lettres trouvées : ${this.letters_found}<hr>Erreurs : ${this.errors} / 7`
+    document.body.querySelector('figcaption').innerHTML = `Nombre de lettres à trouver : ${this.random_word.length}<hr>Lettres trouvées : ${this.letters_found}<hr>Erreurs : ${this.errors} / 7`
 
     this.checkIfWinnerOrLoser()
 }
