@@ -61,12 +61,14 @@ getRandomWord(array) {
 generateLettersButtons(letters_section_element) {
     const ul_element = document.createElement('ul');
     
+    // la string est éclatée en tableau
     const letters = "abcdefghijklmnopqrstuvwxyz".split('').forEach(letter => {
         
         const li_element = document.createElement('li');
         li_element.textContent = letter;
 
-        li_element.addEventListener('click', (event) => this.checkIfLetterIsInTheWord(event), {once:true});
+        // écoute désactivée quand la lettre est cliquée
+        li_element.addEventListener('click', () => this.checkIfLetterIsInTheWord(event), {once:true});
 
         ul_element.appendChild(li_element);
 
@@ -77,7 +79,7 @@ generateLettersButtons(letters_section_element) {
 
 displayHiddenWord() {
 
-
+    // faire une copie du mot aléatoire avec remplacement de ses lettres avec _
     const hidden_word = this.random_word.slice().replace(/[a-z]/g, '_');
 
     const paragraph_element = document.createElement('p')
@@ -86,13 +88,14 @@ displayHiddenWord() {
 
     document.body.querySelector('section[id="word_to_find"]').appendChild(paragraph_element);
 
+    // récupérer tableau avec lettres éclatées et cachées
     return hidden_word.split('')
 }
 
 checkIfLetterIsInTheWord(event) {
 
     // à chaque lettre cliquée, incrémenter compteur de tentatives
-    this.attempts ++;
+    this.attempts++;
 
     const selected_letter = event.target.textContent;
 
@@ -101,21 +104,26 @@ checkIfLetterIsInTheWord(event) {
 
         this.random_word.split('').forEach((letter, index) => {
             if (letter === selected_letter) {
-                this.random_word.length - this.letters_found
-                this.letters_found ++;
+                //this.random_word.length - this.letters_found
+                this.letters_found++;
                 this.hidden_letters_array[index]= selected_letter;
             }
         });
 
         document.body.querySelector('section[id="word_to_find"] > p').textContent = this.hidden_letters_array.join('');
-
-    }else {
+    }
+    
+    else {
         this.errors ++;
         event.target.classList.add('wrong');
         document.body.querySelector('figure > img').src = `./images/Error${this.errors}.png`;
     }
 
-    document.body.querySelector('figcaption').innerHTML = `Nombre de lettres à trouver : ${this.random_word.length}<hr>Lettres trouvées : ${this.letters_found}<hr>Erreurs : ${this.errors} / 7`
+    document.body.querySelector('figcaption').innerHTML = `
+        Nombre de lettres à trouver : ${this.random_word.length}<hr>
+        Lettres trouvées : ${this.letters_found}<hr>
+        Tentatives : ${this.attempts} <hr>
+        Erreurs : ${this.errors} / 7`
 
     this.checkIfWinnerOrLoser()
 }
@@ -124,20 +132,23 @@ checkIfWinnerOrLoser() {
     const word_paragraph = document.body.querySelector('section[id="word_to_find"] > p');
     
     if (this.errors === 7) {
+        word_paragraph.classList.add("loser");
         this.gameOver(word_paragraph);
-        word_paragraph.classList.add('loser');
         word_paragraph.textContent = this.random_word;
     }
 
     if (this.letters_found === this.random_word.length) {
+        word_paragraph.classList.add("winner");
         this.gameOver(word_paragraph);
-        word_paragraph.classList.add('winner');
+        word_paragraph.textContent = this.random_word;
     }
 }
 
 gameOver(word_paragraph) {
 
     word_paragraph.classList.add('gameover');
+
+    // retirer les classes good or wrong associées aux lettres
     document.body.querySelectorAll('li').forEach(letter => letter.className = 'disabled');
 
     const button_element = document.createElement('button');

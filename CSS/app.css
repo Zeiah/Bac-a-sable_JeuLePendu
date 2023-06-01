@@ -66,12 +66,12 @@ hr {
     background-color: rgb(239, 202, 134);
 }
 
-.good {
+#letters > ul > .good {
     border-color : green;
     background-color: greenyellow;
 }
 
-.wrong {
+#letters > ul > .wrong {
     border-color : tomato;
     background-color: rgb(245, 135, 135);
 }
@@ -80,24 +80,24 @@ hr {
 
 }
 
-.gameover {
+#word_to_find > .gameover {
     letter-spacing: 0rem;
-    font-size: 1.5rem;
+    font-size: 30px;
     font-weight: bold;
 }
 
-.winner {
+#word_to_find > .winner {
     color:green;
 }
 
-/*.winner::after {
-    content : '\01F603';
-}*/
+#word_to_find > .winner::after {
+    content: 😸;
+}
 
-.loser {
+#word_to_find > .loser {
     color: tomato;
 }
 
-/*.loser::after {
-    content: '\01F625';
-}/*
+#word_to_find > .loser::after {
+    content: 😿;
+}
