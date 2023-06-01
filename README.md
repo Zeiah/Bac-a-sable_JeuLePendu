@@ -10,4 +10,4 @@ https://www.youtube.com/watch?v=Cvy0VBqMliw
 ! Changements : spécificités fonctionnelles
 - Les mots à trouver contiennent des espaces et/ou des apostrophes : ces signes ne doivent pas être comptabilisés comme des lettres à trouver
 - Les mots contiennent des lettres accentuées : rendre possible leur recherche
-- 10 listes de mots invariables : pouvoir choisir sa liste et pouvoir faire une liste qui les regroupent toutes
+- 10 listes de mots invariables : pouvoir choisir sa liste et pouvoir faire une liste qui les regroupe toutes
