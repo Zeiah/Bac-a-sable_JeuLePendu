@@ -15,22 +15,21 @@ init() {
     this.random_word = this.getRandomWord(this.list_of_words);
     console.log(this.random_word);
     
+    const regex_onlyLetter = /[^a-zÀ-ÿ]+/gi
+    this.filter_random_word = this.random_word.replace(regex_onlyLetter, '')
+    console.log (this.filter_random_word);
+    console.log (this.filter_random_word.length);
+
     const word_section_element = document.createElement('section');
     word_section_element.id = "word_to_find";
 
-    /*if (this.random_word.includes('\ ')) {this.random_word.length -=1}
-    if (this.random_word.includes('\'')) {this.random_word.length -=1}
-    if (this.random_word.includes('\-')) {this.random_word.length -=1}
-    else if (this.random_word.includes('é' || 'è' || 'ê')) {this.random_word.replace(/[éèê]/g, 'e')}   
-    else if (this.random_word.includes('ù')) {this.random_word.replace(/[ù]/g, 'u')}
-    else if (this.random_word.includes('à')) {this.random_word.replace(/[à]/g, 'a')}*/
-
+    
     word_section_element.innerHTML = `
     <figure>
         <img src="./images/Pendu_Nina_7chances.png" alt="support du jeu, 7 chances"><hr>
         <figcaption> 
-            Nombre de lettres à trouver : ${this.random_word.length}<hr> 
-            Lettres trouvées :  ${this.letters_found} / ${this.random_word.length}<hr>
+            Nombre de lettres à trouver : ${this.filter_random_word.length}<hr> 
+            Lettres trouvées :  ${this.letters_found} / ${this.filter_random_word.length}<hr>
             Tentatives : ${this.attempts} / 7 <hr>
             Erreurs : ${this.errors}
         </figcaption>
@@ -79,8 +78,9 @@ generateLettersButtons(letters_section_element) {
 
 displayHiddenWord() {
 
-    // faire une copie du mot aléatoire avec remplacement de ses lettres avec _
-    const hidden_word = this.random_word.slice().replace(/[a-z]/g, '_');
+    // faire une copie methode slice() du mot aléatoire avec remplacement de ses lettres avec _
+    const hidden_word = this.random_word.slice().replace(/[a-zÀ-ÿ]/gi, '_');
+    console.log(hidden_word);
 
     const paragraph_element = document.createElement('p')
 
@@ -120,7 +120,7 @@ checkIfLetterIsInTheWord(event) {
     }
 
     document.body.querySelector('figcaption').innerHTML = `
-        Nombre de lettres à trouver : ${this.random_word.length}<hr>
+        Nombre de lettres à trouver : ${this.filter_random_word.length}<hr>
         Lettres trouvées : ${this.letters_found}<hr>
         Tentatives : ${this.attempts} <hr>
         Erreurs : ${this.errors} / 7`
@@ -137,7 +137,7 @@ checkIfWinnerOrLoser() {
         word_paragraph.textContent = this.random_word;
     }
 
-    if (this.letters_found === this.random_word.length) {
+    if (this.letters_found === this.filter_random_word.length) {
         word_paragraph.classList.add("winner");
         this.gameOver(word_paragraph);
         word_paragraph.textContent = this.random_word;
