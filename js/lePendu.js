@@ -18,9 +18,9 @@ init() {
     const word_section_element = document.createElement('section');
     word_section_element.id = "word_to_find";
 
-    /* if (this.random_word.includes('\ ')) {this.letters_found -=1}
-    if (this.random_word.includes('\'')) {this.letters_found -=1}
-    if (this.random_word.includes('\-')) {this.letters_found -=1}
+    /*if (this.random_word.includes('\ ')) {this.random_word.length -=1}
+    if (this.random_word.includes('\'')) {this.random_word.length -=1}
+    if (this.random_word.includes('\-')) {this.random_word.length -=1}
     else if (this.random_word.includes('é' || 'è' || 'ê')) {this.random_word.replace(/[éèê]/g, 'e')}   
     else if (this.random_word.includes('ù')) {this.random_word.replace(/[ù]/g, 'u')}
     else if (this.random_word.includes('à')) {this.random_word.replace(/[à]/g, 'a')}*/
