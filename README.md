@@ -1,4 +1,4 @@
-# Bac-a-sable_JeuLePendu
+# Bac-a-sable_Jeu_Le-Pendu
 
 #20 Tutoriel JavaScript - Jeu du pendu
 Kev Dev
