@@ -109,11 +109,10 @@ checkIfLetterIsInTheWord(event) {
     if (no_accent_word.includes(selected_letter)) {
         event.target.classList.add('good');
 
-
         no_accent_word.split('').forEach((letter, index) => {
             if (letter === selected_letter) {
                 this.letters_found++;
-                this.hidden_letters_array[index]= selected_letter;
+                this.hidden_letters_array[index]= this.random_word[index];
             }
         });
 
