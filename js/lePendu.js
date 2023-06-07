@@ -99,12 +99,18 @@ checkIfLetterIsInTheWord(event) {
 
     const selected_letter = event.target.textContent;
 
-    if (this.random_word.includes(selected_letter)) {
+    // enregistrer le mot sans accent avec methode normalize()
+    // normalize() : renvoyer la forme normalisée d'une string
+    // NFD (normalization from decomposition) : é est décomposé en e+'
+    // replace() supprime tout ce qui n'est pas une lettre ou un espace
+    const no_accent_word = this.random_word.normalize('NFD').replace(/[^\w\ ]/g, '')
+    console.log(no_accent_word);
+
+    if (no_accent_word.includes(selected_letter)) {
         event.target.classList.add('good');
 
         this.random_word.split('').forEach((letter, index) => {
             if (letter === selected_letter) {
-                //this.random_word.length - this.letters_found
                 this.letters_found++;
                 this.hidden_letters_array[index]= selected_letter;
             }
@@ -130,6 +136,7 @@ checkIfLetterIsInTheWord(event) {
 
 checkIfWinnerOrLoser() {
     const word_paragraph = document.body.querySelector('section[id="word_to_find"] > p');
+    console.log(word_paragraph)
     
     if (this.errors === 7) {
         word_paragraph.classList.add("loser");
