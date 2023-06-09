@@ -1,3 +1,14 @@
+@font-face {
+    font-family: 'Crayon Crumble';
+    font-weight: 400;
+    src: url('./DK Crayon Crumble.ttf') format('ttf')
+}
+
+body {
+    font-family: 'Crayon Crumble', sans-serif ;
+    box-sizing: border-box;
+}
+
 header {
     display: flex;
     flex-direction: column;
@@ -15,29 +26,30 @@ h1 {
 }
 
 h1 > span:nth-child(1) {color: springgreen;}
-h1 > span:nth-child(2) {color: turquoise;}
-h1 > span:nth-child(3) {color: red;}
-h1 > span:nth-child(4) {color: green;}
-h1 > span:nth-child(5) {color: violet;}
-h1 > span:nth-child(6) {color: blue;}
-h1 > span:nth-child(7) {color: gold;}
-h1 > span:nth-child(8) {color: orangered;}
-h1 > span:nth-child(9) {color: blueviolet;}
-h1 > span:nth-child(10) {color: turquoise;}
-h1 > span:nth-child(11) {color: tomato;}
-h1 > span:nth-child(12) {color: yellow;}
-h1 > span:nth-child(13) {color: steelblue;}
-h1 > span:nth-child(14) {color: greenyellow;}
+h1 > span:nth-child(2) {color: lime;}
+h1 > span:nth-child(3) {color: mediumaquamarine;}
+h1 > span:nth-child(4) {color: deeppink;}
+h1 > span:nth-child(5) {color: deepskyblue;}
+h1 > span:nth-child(6) {color: darkturquoise;}
+h1 > span:nth-child(7) {color: aqua;}
+h1 > span:nth-child(8) {color: palegreen;}
+h1 > span:nth-child(9) {color: hotpink;}
+h1 > span:nth-child(10) {color: darkviolet;}
+h1 > span:nth-child(11) {color: fuchsia;}
+h1 > span:nth-child(12) {color: blueviolet;}
+h1 > span:nth-child(13) {color: gold;}
+h1 > span:nth-child(14) {color: turquoise;}
 h1 > span:nth-child(15) {color: mediumslateblue;}
-h1 > span:nth-child(16) {color: seagreen;}
-h1 > span:nth-child(17) {color: turquoise;}
+h1 > span:nth-child(16) {color: aquamarine;}
+h1 > span:nth-child(17) {color: blue;}
+h1 > span:nth-child(18) {color: hotpink;}
 
 /*** Section mot à trouver ***/
 #word_to_find {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
-    width: 60%;
+    gap: 20px;
+    width: 80%;
     justify-content: space-between;
     border: 2px solid springgreen;
     border-radius: 15px;
@@ -45,11 +57,9 @@ h1 > span:nth-child(17) {color: turquoise;}
     font-size: 20px;
 }
 
-.word_to_find__potence {
-    width: 30%;
-}
+
 .word_to_find__text {
-    width: 45%;
+    width: 50%;
     padding: 10px;
 }
 
@@ -58,6 +68,7 @@ figure > img {
     height: 200px;
     object-fit: cover;
     object-position: top;
+    align-items: center;
 }
 
 figcaption {
@@ -85,13 +96,13 @@ figcaption {
 .text__hidden_word {
     display: flex;
     justify-content: center;
-    width : 50%;
+    width : auto;
     margin-bottom: 0;
     padding: 10px;
     letter-spacing: 5px;
     font-size: 30px;
     font-weight: bold;
-    color: darkslateblue;
+    color: darkcyan;
     border: dashed darkturquoise;
     border-radius: 15px;
 }
@@ -116,13 +127,13 @@ figcaption {
     display: flex;
     justify-content: center;
     list-style-type: none;
-    border : 2px solid orange;
+    border : 2px solid mediumorchid;
     border-radius: 50%;
     padding: 5px;
     font-size: 25px;
     font-weight: bold;
-    color : teal;
-    background-color: rgb(239, 202, 134);
+    color : indigo;
+    background-color: powderblue;
 }
 
 #letters > ul > .good {
