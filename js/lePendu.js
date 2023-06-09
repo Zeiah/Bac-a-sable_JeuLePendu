@@ -146,7 +146,7 @@ checkIfLetterIsInTheWord(event) {
 }
 
 checkIfWinnerOrLoser() {
-    const word_paragraph = document.body.querySelector('section[id="word_to_find"] > text__hidden_word');
+    const word_paragraph = document.body.querySelector('.text__hidden_word');
     
     if (this.errors === 7) {
         word_paragraph.classList.add("loser");
