@@ -26,16 +26,22 @@ init() {
 
     
     word_section_element.innerHTML = `
-    <figure>
-        <img src="./images/Pendu_Nina_7chances.png" alt="support du jeu, 7 chances"><br>
-        <figcaption>
-            Tu as encore ${this.compteur} chance(s)! <br> 
-            Nombre de lettres à trouver : ${this.filter_random_word.length}<br> 
-            Tu as trouvé  ${this.letters_found} lettre(s) sur ${this.filter_random_word.length} lettres à trouver<br>
-            Tu as tenté ta chance ${this.attempts} fois <br>
-            Tu as fait ${this.errors} erreur(s)
-        </figcaption>
-    </figure>
+    <div class="word_to_find__potence">
+        <figure>
+            <img src="./images/Pendu_Nina_7chances.png" alt="support du jeu, 7 chances"><br>
+            <figcaption>
+                Tu as encore ${this.compteur} chance(s)! <br> 
+            </figcaption>
+        </figure>
+    </div>
+    <div class="word_to_find__text"> 
+        <div class="text__data">
+            Nombre de lettres à trouver : <span>${this.filter_random_word.length}</span><br> 
+            Tu as trouvé <span>${this.letters_found}</span> lettre(s)<br>
+            Tu as tenté ta chance <span>${this.attempts}</span> fois<br>
+            Tu as fait <span>${this.errors}</span> erreur(s)<br>
+        </div>
+    </div>
     `;
 
     const letters_section_element = document.createElement('section');
@@ -84,11 +90,11 @@ displayHiddenWord() {
     const hidden_word = this.random_word.slice().replace(/[a-zÀ-ÿ]/gi, '_');
     console.log(hidden_word);
 
-    const paragraph_element = document.createElement('p')
-
+    const paragraph_element = document.createElement('p');
+    paragraph_element.className = "text__hidden_word";
     paragraph_element.textContent = hidden_word
 
-    document.body.querySelector('section[id="word_to_find"]').appendChild(paragraph_element);
+    document.body.querySelector('.word_to_find__text').appendChild(paragraph_element);
 
     // récupérer tableau avec lettres éclatées et cachées
     return hidden_word.split('')
@@ -118,28 +124,29 @@ checkIfLetterIsInTheWord(event) {
             }
         });
 
-        document.body.querySelector('section[id="word_to_find"] > p').textContent = this.hidden_letters_array.join('');
+        document.body.querySelector('.text__hidden_word').textContent = this.hidden_letters_array.join('');
     }
     
     else {
         this.errors ++;
+        this.compteur --;
         event.target.classList.add('wrong');
         document.body.querySelector('figure > img').src = `./images/Error${this.errors}.png`;
     }
-
-    document.body.querySelector('figcaption').innerHTML = `
-        Tu as encore ${this.compteur} chance(s)! <br> 
-        Nombre de lettres à trouver : ${this.filter_random_word.length}<br> 
-        Tu as trouvé  ${this.letters_found} lettre(s) sur ${this.filter_random_word.length} lettres à trouver<br>
-        Tu as tenté ta chance ${this.attempts} fois <br>
-        Tu as fait ${this.errors} erreur(s)
-        `
+    
+    document.body.querySelector('figcaption').innerHTML = `Tu as encore ${this.compteur} chance(s)!`
+    document.body.querySelector('.text__data').innerHTML = `
+            Nombre de lettres à trouver : <span>${this.filter_random_word.length}</span><br> 
+            Tu as trouvé  <span>${this.letters_found}</span> lettre(s)<br>
+            Tu as tenté ta chance <span>${this.attempts}</span> fois <br>
+            Tu as fait <span>${this.errors}</span> erreur(s) <br>
+     `
 
     this.checkIfWinnerOrLoser()
 }
 
 checkIfWinnerOrLoser() {
-    const word_paragraph = document.body.querySelector('section[id="word_to_find"] > p');
+    const word_paragraph = document.body.querySelector('section[id="word_to_find"] > text__hidden_word');
     
     if (this.errors === 7) {
         word_paragraph.classList.add("loser");

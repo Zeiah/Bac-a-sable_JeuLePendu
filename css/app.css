@@ -12,29 +12,70 @@ main {
 
 h1 {
     font-size: 35px;
-    color: seagreen;
+    color: springgreen;
 }
 
+/*** Section mot à trouver ***/
 #word_to_find {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    font-size: 25px;
-    color: blueviolet;
-    border: 2px solid blue;
+    flex-wrap: wrap;
+    gap: 15px;
+    height: 250px;
+    width: 90%;
+    justify-content: center;
+    border: 2px solid springgreen;
     border-radius: 15px;
-
+    padding : 15px;
+    font-size: 15px;
 }
 
-hr {
-    border-color: blue ;
+.word_to_find__text {
+    width: 45%;
+    padding: 10px;
 }
 
-#word_to_find > p {
-    letter-spacing: 2px;
+figure > img {
+    border-radius: 15px;
+    height: 200px;
+    object-fit: cover;
+    object-position: top;
+}
+
+figcaption {
+    color: darkorange;
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+}
+
+.word_to_find__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text__data {
+    color: dodgerblue;
+}
+
+.text__data > span {
+    color : crimson;
+}
+
+.text__hidden_word {
+    display: flex;
+    justify-content: center;
+    width : 50%;
+    margin-bottom: 0;
+    padding: 10px;
+    letter-spacing: 5px;
     font-size: 30px;
     font-weight: bold;
-    color :orange;
+    color: darkslateblue;
+    border: dashed darkturquoise;
+    border-radius: 15px;
 }
 
 #letters {
