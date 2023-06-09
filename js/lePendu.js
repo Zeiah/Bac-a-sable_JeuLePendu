@@ -2,6 +2,7 @@ class lePendu {
     constructor({parent_element, list_of_words}) {
         this.parent_element = parent_element;
         this.list_of_words = list_of_words;
+        this.compteur = 7;
         this.errors = 0;
         this.attempts = 0;
         this.letters_found = 0;
@@ -26,12 +27,13 @@ init() {
     
     word_section_element.innerHTML = `
     <figure>
-        <img src="./images/Pendu_Nina_7chances.png" alt="support du jeu, 7 chances"><hr>
-        <figcaption> 
-            Nombre de lettres à trouver : ${this.filter_random_word.length}<hr> 
-            Lettres trouvées :  ${this.letters_found} / ${this.filter_random_word.length}<hr>
-            Tentatives : ${this.attempts} / 7 <hr>
-            Erreurs : ${this.errors}
+        <img src="./images/Pendu_Nina_7chances.png" alt="support du jeu, 7 chances"><br>
+        <figcaption>
+            Tu as encore ${this.compteur} chance(s)! <br> 
+            Nombre de lettres à trouver : ${this.filter_random_word.length}<br> 
+            Tu as trouvé  ${this.letters_found} lettre(s) sur ${this.filter_random_word.length} lettres à trouver<br>
+            Tu as tenté ta chance ${this.attempts} fois <br>
+            Tu as fait ${this.errors} erreur(s)
         </figcaption>
     </figure>
     `;
@@ -126,10 +128,12 @@ checkIfLetterIsInTheWord(event) {
     }
 
     document.body.querySelector('figcaption').innerHTML = `
-        Nombre de lettres à trouver : ${this.filter_random_word.length}<hr>
-        Lettres trouvées : ${this.letters_found}<hr>
-        Tentatives : ${this.attempts} <hr>
-        Erreurs : ${this.errors} / 7`
+        Tu as encore ${this.compteur} chance(s)! <br> 
+        Nombre de lettres à trouver : ${this.filter_random_word.length}<br> 
+        Tu as trouvé  ${this.letters_found} lettre(s) sur ${this.filter_random_word.length} lettres à trouver<br>
+        Tu as tenté ta chance ${this.attempts} fois <br>
+        Tu as fait ${this.errors} erreur(s)
+        `
 
     this.checkIfWinnerOrLoser()
 }
@@ -158,12 +162,12 @@ gameOver(word_paragraph) {
     document.body.querySelectorAll('li').forEach(letter => letter.className = 'disabled');
 
     const button_element = document.createElement('button');
-    button_element.textContent = "Recommencer!";
+    button_element.textContent = "Recommence une partie!";
 
     // recharger la page en conservant le cache (false)
     button_element.addEventListener('click', () => window.location.reload(false));
 
-    document.body.querySelector('section [id="letters"]').appendChild(button_element);
+    document.body.querySelector('section[id="letters"]').appendChild(button_element);
 
 }
 
