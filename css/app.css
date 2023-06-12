@@ -38,6 +38,32 @@ h1 > span:nth-child(16) {color: aquamarine;}
 h1 > span:nth-child(17) {color: blue;}
 h1 > span:nth-child(18) {color: hotpink;}
 
+.listes {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    gap: 20px ;
+    flex-wrap: wrap;
+    width : 75%; 
+}
+
+.listes > li:before {
+    content: "⭐";
+}
+
+.listes > li:nth-child(1) {color: springgreen;}
+.listes > li:nth-child(2) {color: lime;}
+.listes > li:nth-child(3) {color: mediumaquamarine;}
+.listes > li:nth-child(4) {color: deeppink;}
+.listes > li:nth-child(5) {color: deepskyblue;}
+.listes > li:nth-child(6) {color: darkturquoise;}
+.listes > li:nth-child(7) {color: aqua;}
+.listes > li:nth-child(8) {color: palegreen;}
+.listes > li:nth-child(9) {color: hotpink;}
+.listes > li:nth-child(10) {color: darkviolet;}
+.listes > li:nth-child(11) {color: fuchsia;}
+
 /*** Section mot à trouver ***/
 #word_to_find {
     display: flex;
