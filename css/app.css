@@ -151,16 +151,16 @@ figcaption {
     color:lime;
 }
 
-.winner::after {
-    content: 😸;
+.winner:after {
+    content: "😸";
 }
 
 .loser {
     color: crimson;
 }
 
-.loser::after {
-    content: 😿;
+.loser:after {
+    content: "😿";
 }
 
 #letters > button {
