@@ -45,7 +45,7 @@ h1 > span:nth-child(18) {color: hotpink;}
     justify-content: center;
     gap: 20px ;
     flex-wrap: wrap;
-    width : 75%; 
+    width : 80%; 
 }
 
 .listes > li:before {
