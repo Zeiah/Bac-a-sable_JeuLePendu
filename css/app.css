@@ -1,11 +1,5 @@
-@font-face {
-    font-family: 'Crayon Crumble';
-    font-weight: 400;
-    src: url('./DK Crayon Crumble.ttf') format('ttf')
-}
-
 body {
-    font-family: 'Crayon Crumble', sans-serif ;
+    font-family: 'Schoolbell', cursive, sans-serif ;
     box-sizing: border-box;
 }
 
