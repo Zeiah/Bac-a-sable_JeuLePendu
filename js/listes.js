@@ -1,8 +1,8 @@
 const listes = [
     {
-        "id": "1",
-        "name": "Liste 1",
-        "words_to_find": [
+        id: 1,
+        name: "Liste 1",
+        words_to_find: [
             "afin de",
             "ainsi",
             "alors",
@@ -16,9 +16,9 @@ const listes = [
         ]
     },
     {
-        "id": "2",
-        "name": "Liste 2",
-        "words_to_find": [
+        id: 2,
+        name: "Liste 2",
+        words_to_find: [
             "aussi",
             "aussitôt",
             "autant",
@@ -32,9 +32,9 @@ const listes = [
     ]
     },
     {
-        "id": "3",
-        "name": "Liste 3",
-        "words_to_find": [
+        id: 3,
+        name: "Liste 3",
+        words_to_find: [
             "bientôt",
             "car",
             "ceci",
@@ -48,9 +48,9 @@ const listes = [
         ]   
     },
     {
-        "id": "4",
-        "name": "Liste 4",
-        "words_to_find": [
+        id: 4,
+        name: "Liste 4",
+        words_to_find: [
             "dehors",
             "déjà",
             "demain",
@@ -64,9 +64,9 @@ const listes = [
         ]   
     },
     {
-        "id": "5",
-        "name": "Liste 5",
-        "words_to_find": [
+        id: 5,
+        name: "Liste 5",
+        words_to_find: [
             "encore",
             "enfin",
             "ensuite",
@@ -80,9 +80,9 @@ const listes = [
         ]   
     },
     {
-        "id": "6",
-        "name": "Liste 6",
-        "words_to_find": [
+        id: 6,
+        name: "Liste 6",
+        words_to_find: [
             "hier",
             "ici",
             "jamais",
@@ -97,9 +97,9 @@ const listes = [
         ]   
     },
     {
-        "id": "7",
-        "name": "Liste 7",
-        "words_to_find": [
+        id: 7,
+        name: "Liste 7",
+        words_to_find: [
             "mais",
             "malgré",
             "mieux",
@@ -114,9 +114,9 @@ const listes = [
         ]   
     },
     {
-        "id": "8",
-        "name": "Liste 8",
-        "words_to_find": [
+        id: 8,
+        name: "Liste 8",
+        words_to_find: [
             "parfois",
             "parmi",
             "pas",
@@ -130,9 +130,9 @@ const listes = [
         ]   
     },
     {
-        "id": "9",
-        "name": "Liste 9",
-        "words_to_find": [
+        id: 9,
+        name: "Liste 9",
+        words_to_find: [
             "pourquoi",
             "pourtant",
             "près",
@@ -147,9 +147,9 @@ const listes = [
         ]   
     },
     {
-        "id": "10",
-        "name": "Liste 10",
-        "words_to_find": [
+        id: 10,
+        name: "Liste 10",
+        words_to_find: [
             "selon",
             "seulement",
             "sinon",
@@ -163,9 +163,9 @@ const listes = [
         ]   
     },
     {
-        "id": "11",
-        "name": "Liste 11",
-        "words_to_find": [
+        id: 11,
+        name: "Liste 11",
+        words_to_find: [
             "tard",
             "tôt",
             "toujours",
@@ -179,3 +179,15 @@ const listes = [
         ]   
     }
 ]
+
+const liste1 = listes.find(liste => liste.id === 1)
+console.log(liste1)
+
+const liste2 = listes.find(liste => liste.id === 2)
+console.log(liste2)
+
+new lePendu ({
+    parent_element: document.body.querySelector('main'),
+    list_of_words: liste2.words_to_find,
+})
+

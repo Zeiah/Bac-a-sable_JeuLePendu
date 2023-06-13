@@ -1,4 +1,4 @@
-const words_to_find = [
+/*const words_to_find = [
     'afin\ de',
     'ainsi',
     'alors',
@@ -14,4 +14,4 @@ const words_to_find = [
 new lePendu ({
     parent_element: document.body.querySelector('main'),
     list_of_words: words_to_find,
-})
+})*/
