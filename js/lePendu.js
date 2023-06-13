@@ -1,7 +1,3 @@
-/*const choiceOflist = document.createElement('h2')
-choiceOflist.id="numero_liste"
-choiceOflist.textContent = "Tu as choisi la liste ${}"*/
-
 class lePendu {
     constructor({parent_element, list_of_words}) {
         this.parent_element = parent_element;

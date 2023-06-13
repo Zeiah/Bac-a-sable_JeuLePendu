@@ -3,10 +3,11 @@ body {
     box-sizing: border-box;
 }
 
-header {
+.header_logo > img {
+    width: 80%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    margin: auto;   
 }
 
 main {
@@ -46,6 +47,7 @@ h1 > span:nth-child(18) {color: hotpink;}
     gap: 20px ;
     flex-wrap: wrap;
     width : 80%; 
+    padding:0;
 }
 
 .listes > li:before {
@@ -65,6 +67,7 @@ h1 > span:nth-child(18) {color: hotpink;}
 .listes > li:nth-child(11) {color: fuchsia;}
 
 /*** Section mot à trouver ***/
+
 #word_to_find {
     display: flex;
     flex-wrap: wrap;
@@ -76,6 +79,7 @@ h1 > span:nth-child(18) {color: hotpink;}
     border-radius: 15px;
     padding : 20px;
     font-size: 20px;
+    margin-top: 25px;
 }
 
 .word_to_find__text {
@@ -128,8 +132,10 @@ figcaption {
 
 #letters {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
 }
 
 #letters > ul {
@@ -139,8 +145,8 @@ figcaption {
     flex-wrap: wrap;
     padding: 10px;
     cursor: pointer;
-    caret-color:royalblue;
 }
+
 
 #letters > ul > li {
     width : 40px;
@@ -155,6 +161,10 @@ figcaption {
     font-weight: bold;
     color : indigo;
     background-color: powderblue;
+}
+
+#letters > ul> li:hover {
+    background-color: turquoise;
 }
 
 #letters > ul > .good {
@@ -196,7 +206,7 @@ figcaption {
     text-align: centre;
     border-radius: 15px;
     border: 2px solid mediumvioletred;
-    background-color:yellow;
+    background-color:pink;
     color: darkcyan;
     cursor: pointer;
 }
