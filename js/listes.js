@@ -180,14 +180,33 @@ const listes = [
     }
 ]
 
-const liste1 = listes.find(liste => liste.id === 1)
+/*const liste1 = listes.find(liste => liste.id === 1)
 console.log(liste1)
 
 const liste2 = listes.find(liste => liste.id === 2)
-console.log(liste2)
+console.log(liste2)*/
 
-new lePendu ({
-    parent_element: document.body.querySelector('main'),
-    list_of_words: liste2.words_to_find,
-})
+document.querySelector('.liste1').addEventListener("click", choisirMaListe)
+function choisirMaListe() {
+    const liste1 = listes.find(liste => liste.id === 1)
+    console.log(liste1)
+    new lePendu ({
+        parent_element: document.body.querySelector('main'),
+        list_of_words: liste1.words_to_find,
+    })
+}
+
+/*document.querySelector('liste1').onclick = function(){
+    new lePendu ({
+        parent_element: document.body.querySelector('main'),
+        list_of_words: liste1.words_to_find,
+    })
+}
+
+document.querySelector('liste2').onclick = function(){
+    new lePendu ({
+        parent_element: document.body.querySelector('main'),
+        list_of_words: liste2.words_to_find,
+    })
+}*/
 
