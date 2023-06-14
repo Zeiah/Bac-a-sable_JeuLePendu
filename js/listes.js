@@ -180,33 +180,23 @@ const listes = [
     }
 ]
 
-/*const liste1 = listes.find(liste => liste.id === 1)
-console.log(liste1)
-
-const liste2 = listes.find(liste => liste.id === 2)
-console.log(liste2)*/
-
-document.querySelector('.liste1').addEventListener("click", choisirMaListe)
-function choisirMaListe() {
-    const liste1 = listes.find(liste => liste.id === 1)
-    console.log(liste1)
-    new lePendu ({
-        parent_element: document.body.querySelector('main'),
-        list_of_words: liste1.words_to_find,
-    })
+function toChooseMyList() {
+    const btnList = document.querySelectorAll('.btnList')
+    console.log("btnlist", btnList);
+    for (let i = 0; i < btnList.length; i++){
+        btnList[i].addEventListener("click", () => {
+            const btnListId = parseInt(btnList[i].id)
+            console.log("btnListId", btnListId)
+            const myList = listes.find(liste => liste.id === btnListId)
+            console.log(myList);
+            new lePendu ({
+                parent_element: document.body.querySelector('main'),
+                list_of_words: myList.words_to_find,
+            })
+        }  
+    )}
 }
 
-/*document.querySelector('liste1').onclick = function(){
-    new lePendu ({
-        parent_element: document.body.querySelector('main'),
-        list_of_words: liste1.words_to_find,
-    })
-}
+toChooseMyList()
 
-document.querySelector('liste2').onclick = function(){
-    new lePendu ({
-        parent_element: document.body.querySelector('main'),
-        list_of_words: liste2.words_to_find,
-    })
-}*/
 
