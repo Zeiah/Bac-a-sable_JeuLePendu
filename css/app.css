@@ -163,8 +163,8 @@ figcaption {
 
 
 #letters > ul > li {
-    width : 40px;
-    height: 40px;
+    width : 30px;
+    height: 30px;
     display: flex;
     justify-content: center;
     list-style-type: none;
@@ -178,7 +178,8 @@ figcaption {
 }
 
 #letters > ul> li:hover {
-    background-color: turquoise;
+    transform: scale(0.80);
+    box-shadow: 0 0 4px mediumorchid;
 }
 
 #letters > ul > .good {
