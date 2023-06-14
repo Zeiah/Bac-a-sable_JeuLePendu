@@ -7,7 +7,8 @@ body {
     width: 80%;
     display: flex;
     justify-content: center;
-    margin: auto;   
+    margin: auto;
+    padding-bottom: 25px;   
 }
 
 main {
@@ -16,6 +17,7 @@ main {
     align-items: center;
 }
 
+/*titre avec lettres de toutes les couleurs*/
 h1 {
     font-size: 40px;
 }
@@ -37,8 +39,9 @@ h1 > span:nth-child(14) {color: turquoise;}
 h1 > span:nth-child(15) {color: mediumslateblue;}
 h1 > span:nth-child(16) {color: aquamarine;}
 h1 > span:nth-child(17) {color: blue;}
-h1 > span:nth-child(18) {color: hotpink;}
+h1 > span:nth-child(18) {color: steelblue;}
 
+/* boutons pour choisir sa liste*/
 .listes {
     list-style: none;
     cursor: pointer;
@@ -50,21 +53,28 @@ h1 > span:nth-child(18) {color: hotpink;}
     padding:0;
 }
 
-.listes > li:before {
+.listes > li > button:before {
     content: "⭐";
 }
 
-.listes > li:nth-child(1) {color: springgreen;}
-.listes > li:nth-child(2) {color: lime;}
-.listes > li:nth-child(3) {color: mediumaquamarine;}
-.listes > li:nth-child(4) {color: deeppink;}
-.listes > li:nth-child(5) {color: deepskyblue;}
-.listes > li:nth-child(6) {color: darkturquoise;}
-.listes > li:nth-child(7) {color: aqua;}
-.listes > li:nth-child(8) {color: palegreen;}
-.listes > li:nth-child(9) {color: hotpink;}
-.listes > li:nth-child(10) {color: darkviolet;}
-.listes > li:nth-child(11) {color: fuchsia;}
+.listes > li > button {
+    background-color: white;
+    border-radius: 15px;
+    padding: 5px;
+}
+
+.listes > li:nth-child(1) > button {color: springgreen; border: 2px solid mediumslateblue;}
+.listes > li:nth-child(2) > button {color: lime; border: 2px solid fuchsia;}
+.listes > li:nth-child(3) > button {color: mediumaquamarine; border: 2px solid gold;}
+.listes > li:nth-child(4) > button {color: deeppink; border: 2px solid steelblue;}
+.listes > li:nth-child(5) > button {color: deepskyblue; border: 2px solid palegreen;}
+.listes > li:nth-child(6) > button {color: darkturquoise; border: 2px solid blueviolet;}
+.listes > li:nth-child(7) > button {color: aqua; border: 2px solid lime;}
+.listes > li:nth-child(8) > button {color: palegreen; border: 2px solid blue;}
+.listes > li:nth-child(9) > button {color: hotpink; border: 2px solid turquoise;}
+.listes > li:nth-child(10) > button {color: darkviolet; border: 2px solid deepskyblue;}
+.listes > li:nth-child(11) > button {color: fuchsia; border: 2px solid aqua;}
+
 
 /*** Section mot à trouver ***/
 
