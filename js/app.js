@@ -192,8 +192,8 @@ function toChooseMyList() {
             new lePendu ({
                 parent_element: document.body.querySelector('main'),
                 list_of_words: myList.words_to_find,
-            })
-        }  
+            })  
+        } 
     )}
 }
 
