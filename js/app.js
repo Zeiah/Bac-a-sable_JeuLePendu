@@ -189,6 +189,10 @@ function toChooseMyList() {
             console.log("btnListId", btnListId)
             const myList = listes.find(liste => liste.id === btnListId)
             console.log(myList);
+            
+            const myListNumber = document.body.querySelector("h2");
+            myListNumber.innerHTML = ` <span>T</span><span>u</span> <span>a</span><span>s</span> <span>c</span><span>h</span><span>o</span><span>i</span><span>s</span><span>i</span> <span>l</span><span>a</span> <span>${myList.name}</span>`
+            
             new lePendu ({
                 parent_element: document.body.querySelector('main'),
                 list_of_words: myList.words_to_find,

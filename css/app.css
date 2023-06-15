@@ -25,6 +25,7 @@ main {
 /*titre avec lettres de toutes les couleurs*/
 h1 {
     font-size: 40px;
+    text-align: center;
 }
 
 h1 > span:nth-child(1) {color: springgreen;}
@@ -46,12 +47,36 @@ h1 > span:nth-child(16) {color: aquamarine;}
 h1 > span:nth-child(17) {color: blue;}
 h1 > span:nth-child(18) {color: steelblue;}
 
+h2 {
+    font-size: 25px;
+    text-align: center;
+    color: darkcyan;
+}
+
+h2:before {content: "🚀";}
+
+h2 > span:nth-child(1) {color: steelblue;}
+h2 > span:nth-child(2) {color: gold;}
+h2 > span:nth-child(3) {color: deeppink;}
+h2 > span:nth-child(4) {color: turquoise;}
+h2 > span:nth-child(5) {color: springgreen;}
+h2 > span:nth-child(6) {color: blueviolet;}
+h2 > span:nth-child(7) {color: deepskyblue;}
+h2 > span:nth-child(8) {color: fuchsia;}
+h2 > span:nth-child(9) {color: aquamarine;}
+h2 > span:nth-child(10) {color: lime;}
+h2 > span:nth-child(11) {color: blue;}
+h2 > span:nth-child(12) {color: tomato;}
+h2 > span:nth-child(13) {color: mediumaquamarine;}
+h2 > span:nth-child(13):before {content: "⭐"}
+
 /* boutons pour choisir sa liste*/
 .listes {
     list-style: none;
     cursor: pointer;
     display: flex;
     justify-content: center;
+    margin: auto;
     gap: 20px ;
     flex-wrap: wrap;
     width : 80%; 
@@ -79,6 +104,14 @@ h1 > span:nth-child(18) {color: steelblue;}
 .listes > li:nth-child(9) > button {color: hotpink; border: 2px solid turquoise;}
 .listes > li:nth-child(10) > button {color: darkviolet; border: 2px solid deepskyblue;}
 .listes > li:nth-child(11) > button {color: fuchsia; border: 2px solid aqua;}
+
+.listes > li > button:focus {
+    color: midnightblue;
+    box-shadow: 0 0 7px midnightblue;
+    background-color: lightgoldenrodyellow;
+    border: 2px solid teal;
+    transform: scale(1.25);
+}
 
 
 /*** Section mot à trouver ***/
@@ -179,7 +212,7 @@ figcaption {
 
 #letters > ul> li:hover {
     transform: scale(0.80);
-    box-shadow: 0 0 4px mediumorchid;
+    box-shadow: 0 0 7px mediumorchid;
 }
 
 #letters > ul > .good {
