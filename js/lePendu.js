@@ -14,6 +14,11 @@ class lePendu {
 
 
 init() {
+    const numberOfWords_to_find = document.body.querySelector("h3");
+    numberOfWords_to_find.innerHTML = `
+        <span>I</span><span>l</span> <span>y</span> <span>a</span> <span>${this.list_of_words.length}</span> <span>m</span><span>o</span><span>t</span><span>s</span> <span>à</span> <span>t</span><span>r</span><span>o</span><span>u</span><span>v</span><span>e</span><span>r</span><br>
+        Tu en as trouvé x / ${this.list_of_words.length}`;
+
     this.random_word = this.getRandomWord(this.list_of_words);
     console.log("mot", this.random_word);
     console.log("nombre de signes mot", this.random_word.length);

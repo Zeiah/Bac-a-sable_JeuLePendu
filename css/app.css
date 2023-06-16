@@ -22,10 +22,13 @@ main {
     align-items: center;
 }
 
-/*titre avec lettres de toutes les couleurs*/
+/* Les 3 titres avec lettres de toutes les couleurs*/
+h1, h2, h3 {
+    text-align: center;
+}
+
 h1 {
     font-size: 40px;
-    text-align: center;
 }
 
 h1 > span:nth-child(1) {color: springgreen;}
@@ -49,8 +52,6 @@ h1 > span:nth-child(18) {color: steelblue;}
 
 h2 {
     font-size: 25px;
-    text-align: center;
-    color: darkcyan;
 }
 
 h2:before {content: "🚀";}
@@ -68,12 +69,34 @@ h2 > span:nth-child(10) {color: lime;}
 h2 > span:nth-child(11) {color: blue;}
 h2 > span:nth-child(12) {color: tomato;}
 h2 > span:nth-child(13) {color: mediumaquamarine;}
-h2 > span:nth-child(13):before {content: "⭐"}
+h2 > span:nth-child(13):before {content: "⭐";}
+
+h3 {
+    font-size: 25px;
+}
+
+h3 > span:nth-child(1) {color: mediumaquamarine;}
+h3 > span:nth-child(2) {color: fuchsia;}
+h3 > span:nth-child(3) {color: deeppink;}
+h3 > span:nth-child(4) {color: lime;}
+h3 > span:nth-child(5) {color: aquamarine;}
+h3 > span:nth-child(6) {color: gold;}
+h3 > span:nth-child(7) {color: steelblue;}
+h3 > span:nth-child(8) {color: tomato;}
+h3 > span:nth-child(9) {color: deepskyblue;}
+h3 > span:nth-child(10) {color: turquoise;}
+h3 > span:nth-child(11) {color: springgreen;}
+h3 > span:nth-child(12) {color: blue;}
+h3 > span:nth-child(13) {color: blueviolet;}
+h3 > span:nth-child(14) {color: palegreen;}
+h3 > span:nth-child(15) {color: mediumslateblue;}
+h3 > span:nth-child(16) {color: hotpink;}
+h1 > span:nth-child(17) {color: orangered;}
+
 
 /* boutons pour choisir sa liste*/
 .listes {
     list-style: none;
-    cursor: pointer;
     display: flex;
     justify-content: center;
     margin: auto;
@@ -91,6 +114,9 @@ h2 > span:nth-child(13):before {content: "⭐"}
     background-color: white;
     border-radius: 15px;
     padding: 5px;
+    font-size: 25px;
+    cursor: pointer;
+    font-family: 'schoolbell',cursive, sans-serif;
 }
 
 .listes > li:nth-child(1) > button {color: springgreen; border: 2px solid mediumslateblue;}
@@ -112,7 +138,6 @@ h2 > span:nth-child(13):before {content: "⭐"}
     border: 2px solid teal;
     transform: scale(1.25);
 }
-
 
 /*** Section mot à trouver ***/
 #word_to_find {
