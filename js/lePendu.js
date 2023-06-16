@@ -7,6 +7,7 @@ class lePendu {
         this.attempts = 0;
         this.letters_found = 0;
         this.random_word;
+        this.no_accent_random_word;
         this.hidden_letters_array;
         this.init();
     }
@@ -14,17 +15,18 @@ class lePendu {
 
 init() {
     this.random_word = this.getRandomWord(this.list_of_words);
-    console.log(this.random_word);
-    
-    const regex_onlyLetter = /[^a-zÀ-ÿ]+/gi
+    console.log("mot", this.random_word);
+    console.log("nombre de signes mot", this.random_word.length);
+
+    //filter mot : uniquement des lettres à trouver, exclusion  signes - et ' dans le compteur
+    const regex_onlyLetter = /[^a-zÀ-ÿ]+/gi;
     this.filter_random_word = this.random_word.replace(regex_onlyLetter, '')
-    console.log (this.filter_random_word);
-    console.log (this.filter_random_word.length);
+    console.log ("mot filtré only letter", this.filter_random_word);
+    console.log ("nombre de signes mot filtré", this.filter_random_word.length);
 
     const word_section_element = document.createElement('section');
     word_section_element.id = "word_to_find";
 
-    
     word_section_element.innerHTML = `
     <div class="word_to_find__potence">
         <figure>
@@ -69,7 +71,7 @@ generateLettersButtons(letters_section_element) {
     const ul_element = document.createElement('ul');
     
     // la string est éclatée en tableau
-    const letters = "abcdefghijklmnopqrstuvwxyz".split('').forEach(letter => {
+    "abcdefghijklmnopqrstuvwxyz".split('').forEach(letter => {
         
         const li_element = document.createElement('li');
         li_element.textContent = letter;
@@ -109,10 +111,10 @@ checkIfLetterIsInTheWord(event) {
 
     // enregistrer le mot sans accent avec methode normalize()
     // normalize() : renvoyer la forme normalisée d'une string
-    // NFD (normalization from decomposition) : é est décomposé en e+'
+    // NFD (normalization from decomposition) : é est décomposé en e + '
     // replace() supprime tout ce qui n'est pas une lettre ou un espace
-    const no_accent_word = this.random_word.normalize('NFD').replace(/[^\w\ ]/g, '')
-    console.log(no_accent_word);
+    const no_accent_word = this.random_word.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    console.log("mot sans accent ds checking()", no_accent_word);
 
     if (no_accent_word.includes(selected_letter)) {
         event.target.classList.add('good');

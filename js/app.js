@@ -3,15 +3,15 @@ const listes = [
         id: 1,
         name: "Liste 1",
         words_to_find: [
-            "afin de",
+            "afin\ de",
             "ainsi",
             "alors",
             "après",
             "assez",
-            "à travers",
-            "au-dessus",
-            "au-dessous",
-            "aujourd'hui",
+            "à\ travers",
+            "au\-dessus",
+            "au\-dessous",
+            "aujourd\'hui",
             "auprès" 
         ]
     },
