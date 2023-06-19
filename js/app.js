@@ -198,8 +198,7 @@ function toChooseMyList() {
                 list_of_words: myList.words_to_find,
             });
 
-            !btnList[i]? disabledBtn() : setAttribute("focus", "")
-        
+            disabledBtn()
         }   
     )}
 }
