@@ -7,6 +7,7 @@ class lePendu {
         this.attempts = 0;
         this.letters_found = 0;
         this.random_word;
+        this.filter_random_word;
         this.no_accent_random_word;
         this.hidden_letters_array;
         this.init();
@@ -14,6 +15,7 @@ class lePendu {
 
 
 init() {
+
     const numberOfWords_to_find = document.body.querySelector("h3");
     numberOfWords_to_find.innerHTML = `
         <span>I</span><span>l</span> <span>y</span> <span>a</span> <span>${this.list_of_words.length}</span> <span>m</span><span>o</span><span>t</span><span>s</span> <span>à</span> <span>t</span><span>r</span><span>o</span><span>u</span><span>v</span><span>e</span><span>r</span><br>
@@ -50,6 +52,14 @@ init() {
         </div>
     </div>
     `;
+
+    /*const old_section = word_section_element.previousSibling
+    console.log(old_section)
+
+    const new_section = word_section_element.nextSibling
+    console.log(new_section)
+    const parent_element = new_section.parentNode
+    main.replaceChild(old_section, new_section)*/
 
     const letters_section_element = document.createElement('section');
     letters_section_element.id = "letters";
@@ -182,7 +192,6 @@ gameOver(word_paragraph) {
     button_element.addEventListener('click', () => window.location.reload(false));
 
     document.body.querySelector('section[id="letters"]').appendChild(button_element);
-
 }
 
 }

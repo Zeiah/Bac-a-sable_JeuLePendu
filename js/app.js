@@ -196,11 +196,23 @@ function toChooseMyList() {
             new lePendu ({
                 parent_element: document.body.querySelector('main'),
                 list_of_words: myList.words_to_find,
-            })
-        } 
+            });
+
+            !btnList[i]? disabledBtn() : setAttribute("focus", "")
+        
+        }   
     )}
 }
 
+function disabledBtn() {
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach(button => {
+        button.setAttribute("disabled", "")
+        })         
+}
+
 toChooseMyList()
+
+
 
 
