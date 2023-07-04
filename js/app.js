@@ -180,6 +180,15 @@ const listes = [
     }
 ]
 
+const rules = document.querySelector("h3");
+rules.innerHTML = `Choisis une liste de mots <br> et découvre le mot caché`
+
+const figcaption = document.querySelector('figcaption');
+figcaption.innerHTML = `Tu as 7 chance(s)! <br>`
+
+const text__hidden_word = document.querySelector('.text__hidden_word');
+text__hidden_word.innerHTML = `Mot caché`
+
 function toChooseMyList() {
     const btnList = document.querySelectorAll('.btnList')
     console.log("btnlist", btnList);
@@ -189,10 +198,15 @@ function toChooseMyList() {
             console.log("btnListId", btnListId)
             const myList = listes.find(liste => liste.id === btnListId)
             console.log(myList);
+
+            btnList[i].setAttribute("class", "selected")
             
             const myListNumber = document.body.querySelector("h2");
-            myListNumber.innerHTML = ` <span>T</span><span>u</span> <span>a</span><span>s</span> <span>c</span><span>h</span><span>o</span><span>i</span><span>s</span><span>i</span> <span>l</span><span>a</span> <span>${myList.name}</span>`
+            myListNumber.innerHTML = ` Tu as choisi la <span>${myList.name}</span>`
             
+            const rules = document.querySelector("h3");
+            rules.innerHTML = ``
+
             new lePendu ({
                 parent_element: document.body.querySelector('main'),
                 list_of_words: myList.words_to_find,

@@ -16,10 +16,10 @@ class lePendu {
 
 init() {
 
-    const numberOfWords_to_find = document.body.querySelector("h3");
+    /* const numberOfWords_to_find = document.body.querySelector("h3");
     numberOfWords_to_find.innerHTML = `
         <span>I</span><span>l</span> <span>y</span> <span>a</span> <span>${this.list_of_words.length}</span> <span>m</span><span>o</span><span>t</span><span>s</span> <span>à</span> <span>t</span><span>r</span><span>o</span><span>u</span><span>v</span><span>e</span><span>r</span><br>
-        Tu en as trouvé x / ${this.list_of_words.length}`;
+        Tu en as trouvé x / ${this.list_of_words.length}`;*/
 
     this.random_word = this.getRandomWord(this.list_of_words);
     console.log("mot", this.random_word);
@@ -31,10 +31,11 @@ init() {
     console.log ("mot filtré only letter", this.filter_random_word);
     console.log ("nombre de signes mot filtré", this.filter_random_word.length);
 
-    const word_section_element = document.createElement('section');
-    word_section_element.id = "word_to_find";
+    const word_section_element = document.querySelector('#word_to_find');
+    //const word_section_element = document.createElement('section');
+    //word_section_element.id = "word_to_find";
 
-    word_section_element.innerHTML = `
+    /*word_section_element.innerHTML = `
     <div class="word_to_find__potence">
         <figure>
             <img src="./images/Pendu_Nina_7chances.png" alt="support du jeu, 7 chances"><br>
@@ -51,18 +52,18 @@ init() {
             Tu as fait <span>${this.errors}</span> erreur(s)<br>
         </div>
     </div>
-    `;
+    `;*/
+    const figcaption = document.querySelector('figcaption');
+    figcaption.innerHTML = `Tu as encore ${this.compteur} chance(s)! <br>`
 
-    /*const old_section = word_section_element.previousSibling
-    console.log(old_section)
-
-    const new_section = word_section_element.nextSibling
-    console.log(new_section)
-    const parent_element = new_section.parentNode
-    main.replaceChild(old_section, new_section)*/
-
-    const letters_section_element = document.createElement('section');
-    letters_section_element.id = "letters";
+    const text__data = document.querySelector('.text__data');
+    text__data.innerHTML = `
+        Nombre de lettres à trouver : <span>${this.filter_random_word.length}</span><br> 
+        Tu as trouvé <span>${this.letters_found}</span> lettre(s)<br>
+        Tu as tenté ta chance <span>${this.attempts}</span> fois<br>
+        Tu as fait <span>${this.errors}</span> erreur(s)<br>
+    `
+    const letters_section_element = document.querySelector("#letters");
 
     this.generateLettersButtons(letters_section_element);
 
@@ -105,13 +106,10 @@ displayHiddenWord() {
 
     // faire une copie methode slice() du mot aléatoire avec remplacement de ses lettres avec _
     const hidden_word = this.random_word.slice().replace(/[a-zÀ-ÿ]/gi, '_');
-    console.log(hidden_word);
+    console.log("mot caché", hidden_word);
 
-    const paragraph_element = document.createElement('p');
-    paragraph_element.className = "text__hidden_word";
-    paragraph_element.textContent = hidden_word
-
-    document.body.querySelector('.word_to_find__text').appendChild(paragraph_element);
+    const text__hidden_word = document.querySelector('.text__hidden_word');
+    text__hidden_word.textContent = hidden_word
 
     // récupérer tableau avec lettres éclatées et cachées
     return hidden_word.split('')

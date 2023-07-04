@@ -52,47 +52,21 @@ h1 > span:nth-child(18) {color: steelblue;}
 
 h2 {
     font-size: 25px;
+    color :darkturquoise;
 }
 
 h2:before {content: "🚀";}
 
-h2 > span:nth-child(1) {color: steelblue;}
-h2 > span:nth-child(2) {color: gold;}
-h2 > span:nth-child(3) {color: deeppink;}
-h2 > span:nth-child(4) {color: turquoise;}
-h2 > span:nth-child(5) {color: springgreen;}
-h2 > span:nth-child(6) {color: blueviolet;}
-h2 > span:nth-child(7) {color: deepskyblue;}
-h2 > span:nth-child(8) {color: fuchsia;}
-h2 > span:nth-child(9) {color: aquamarine;}
-h2 > span:nth-child(10) {color: lime;}
-h2 > span:nth-child(11) {color: blue;}
-h2 > span:nth-child(12) {color: tomato;}
-h2 > span:nth-child(13) {color: mediumaquamarine;}
-h2 > span:nth-child(13):before {content: "⭐";}
+h2 > span {color: deepskyblue;}
+h2 > span:before {content: "⭐";}
 
 h3 {
     font-size: 25px;
+    color: deeppink;
 }
 
-h3 > span:nth-child(1) {color: mediumaquamarine;}
-h3 > span:nth-child(2) {color: fuchsia;}
-h3 > span:nth-child(3) {color: deeppink;}
-h3 > span:nth-child(4) {color: lime;}
-h3 > span:nth-child(5) {color: aquamarine;}
-h3 > span:nth-child(6) {color: gold;}
-h3 > span:nth-child(7) {color: steelblue;}
-h3 > span:nth-child(8) {color: tomato;}
-h3 > span:nth-child(9) {color: deepskyblue;}
-h3 > span:nth-child(10) {color: turquoise;}
-h3 > span:nth-child(11) {color: springgreen;}
-h3 > span:nth-child(12) {color: blue;}
-h3 > span:nth-child(13) {color: blueviolet;}
-h3 > span:nth-child(14) {color: palegreen;}
-h3 > span:nth-child(15) {color: mediumslateblue;}
-h3 > span:nth-child(16) {color: hotpink;}
-h1 > span:nth-child(17) {color: orangered;}
-
+h3:before {
+    content: "🧭";}
 
 /* boutons pour choisir sa liste*/
 .listes {
@@ -131,11 +105,8 @@ h1 > span:nth-child(17) {color: orangered;}
 .listes > li:nth-child(10) > button {color: darkviolet; border: 2px solid deepskyblue;}
 .listes > li:nth-child(11) > button {color: fuchsia; border: 2px solid aqua;}
 
-.listes > li > button:focus {
-    color: midnightblue;
-    box-shadow: 0 0 7px midnightblue;
-    background-color: lightgoldenrodyellow;
-    border: 2px solid teal;
+.listes > li > .selected {
+    box-shadow: 0 0  10px orange;
     transform: scale(1.25);
 }
 
@@ -149,9 +120,8 @@ h1 > span:nth-child(17) {color: orangered;}
     justify-content: space-evenly;
     border: 2px solid springgreen;
     border-radius: 15px;
-    padding : 20px;
+    padding : 10px;
     font-size: 20px;
-    margin-top: 25px;
 }
 
 .word_to_find__text {
@@ -182,6 +152,7 @@ figcaption {
 
 .text__data {
     color: dodgerblue;
+    padding-bottom: 25px;
 }
 
 .text__data > span {
@@ -192,7 +163,7 @@ figcaption {
     display: flex;
     justify-content: center;
     width : auto;
-    margin-bottom: 0;
+    margin: 0;
     padding: 10px;
     letter-spacing: 5px;
     font-size: 30px;
